@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 module ShopifyApp
   # rubocop:disable Style/ClassVars
   # Class var repo is needed here in order to share data between the 2 child classes.

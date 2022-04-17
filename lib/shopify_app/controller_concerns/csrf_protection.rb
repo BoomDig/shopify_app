@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 module ShopifyApp
   module CsrfProtection
     extend ActiveSupport::Concern
@@ -10,7 +9,7 @@ module ShopifyApp
     private
 
     def valid_session_token?
-      request.env["jwt.shopify_domain"]
+      request.env['jwt.shopify_domain']
     end
   end
 end

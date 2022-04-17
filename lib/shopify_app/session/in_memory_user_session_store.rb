@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 module ShopifyApp
   class InMemoryUserSessionStore < InMemorySessionStore
     class << self

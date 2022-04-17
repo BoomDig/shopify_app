@@ -1,11 +1,10 @@
 # frozen_string_literal: true
-
 module ShopifyApp
   class InMemoryShopSessionStore < InMemorySessionStore
     class << self
       def store(session, *args)
         id = super
-        repo[session.shop] = session
+        repo[session.domain] = session
         id
       end
 

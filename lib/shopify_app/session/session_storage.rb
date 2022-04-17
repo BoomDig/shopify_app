@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 module ShopifyApp
   module SessionStorage
     extend ActiveSupport::Concern
@@ -10,9 +9,12 @@ module ShopifyApp
     end
 
     def with_shopify_session(&block)
-      ShopifyAPI::Auth::Session.temp(shop: shopify_domain, access_token: shopify_token) do
-        yield block
-      end
+      ShopifyAPI::Session.temp(
+        domain: shopify_domain,
+        token: shopify_token,
+        api_version: api_version,
+        &block
+      )
     end
   end
 end

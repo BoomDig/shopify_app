@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 namespace :shopify do
   desc "Rotate shopify tokens for all active shops"
   task :rotate_shopify_tokens, [:refresh_token] => :environment do |_t, args|
