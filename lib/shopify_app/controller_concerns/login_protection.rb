@@ -100,7 +100,7 @@ module ShopifyApp
       return unless expire_at
       expire_at - 5.seconds # 5s gap to start fetching new token in advance
     end
-
+       return @host if @host.present?
     protected
 
     def jwt_shopify_domain
@@ -112,7 +112,7 @@ module ShopifyApp
     end
 
     def host
-      params[:host]
+      return @host if @host.present?
     end
 
     def redirect_to_login
